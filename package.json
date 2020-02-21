@@ -1,0 +1,28 @@
+{
+  "name": "gdl004-md-links",
+  "version": "1.0.0",
+  "description": "verificar rutas de archivos",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MonseSalasVi/GDL004-md-links.git"
+  },
+  "author": "Monse Salas V",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MonseSalasVi/GDL004-md-links/issues"
+  },
+  "homepage": "https://github.com/MonseSalasVi/GDL004-md-links#readme",
+  "dependencies": {
+    "argvd": "^1.0.0",
+    "editorconfig": "^0.15.3",
+    "markdown-link-extractor": "^1.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0"
+  }
+}
