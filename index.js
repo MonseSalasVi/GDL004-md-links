@@ -1,27 +1,52 @@
 const fs = require('fs') //Puede leer archivos
 const path = require('path') //es el archivo que va a leer
 
-if (path.extname != '.md' ){
-    console.log('No es archivo md')
-} else{
-    console.log('Es un archivo md')
-}
+const  { validateExtension }  = require('./validateExtension.js'); // Destructuring de objetos ??????
+const { constructionOptions } = require('./contructionOptions.js');
+const direction = process.argv[2] // /monsesalas/Desktop/GDL004-md-links/README.md ruta del archivo
+extension = path.extname(direction) //extension del archivo 
+// console.log(extension)
+var markdownLinkExtractor = require('markdown-link-extractor');
+var markdown = fs.readFileSync('README.md').toString();
+var links = markdownLinkExtractor(markdown);
+
+
+ const params = process.argv;
+
+const esValidaLaExtension = validateExtension(direction);
+console.log("Viene de mi funcion ", esValidaLaExtension);
+const options = constructionOptions(params);
+console.log("Viene de mi modulo  ", options);
+
+
+// console.log(options)
+
+
+// console.log(validateExtension);
 
 
 
 
-/*const markdownLinkExtractor = require('markdown-link-extractor')
-const markdown = fs.readFileSync('README.md').toString(); //muestra mi readme
-//console.log(fs.readFileSync(process.argv[2], 'utf8')) //retorna buffer el readme (con utf8 retorna readme)
-const links = markdownLinkExtractor(markdown);
-links.forEach(function (link) {
-    //console.log(link); //muestra los links de mi readme
+// if(extension === '.md') {
+//     console.log('Es un archivo md')
+//     links.forEach(function (link) {
+//         console.log(link);
+//     });
     
-}); */
+// } else {
+//     console.log('No es archivo md')
+// }
+// return false
 
 
 
- 
+
+  
+
+
+
+
+
 
 
 //console.log(typeof link)
