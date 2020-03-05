@@ -1,49 +1,30 @@
-const fs = require('fs') //Puede leer archivos
-const path = require('path') //es el archivo que va a leer
+const fs = require('fs') //Accede al archvivo
+const path = require('path') //referencia del archivo
 const  { validateExtension }  = require('./validateExtension.js'); // Destructuring de objetos ??????
-const { constructionOptions } = require('./contructionOptions.js');
+const { constructionOptions } = require('./contructionOptions.js'); //Valida las opciones
+const{arraydeobjetos} = require('./extraelinks') //extrae un array de todos los links y texto
 const direction = process.argv[2] // /monsesalas/Desktop/GDL004-md-links/README.md ruta del archivo
-extension = path.extname(direction) //extension del archivo 
-const {leerArchivo} = require('./leer') //retorna el redme en string
-
- //console.log(extension) // .md
-
- const params = process.argv; //del texto que ingresan
-
-const esValidaLaExtension = validateExtension(direction);
- const options = constructionOptions(params);
+const extension = path.extname(direction) //extension del archivo 
+const esValidaLaExtension = validateExtension(direction); //retorna si es true o false la funcion
+const params = process.argv; //del texto que ingresan
+const options = constructionOptions(params); //Objeto con validate y stats
 //console.log("Viene de mi funcion ", esValidaLaExtension); //true o false
 //console.log("Viene de mi modulo  ", options); //true o false
-//console.log('debe leer mi archivo', leerArchivo(direction)) //readme completo
+
+
+
+
+
+// console.log(esValidaLaExtension) //true o false
+// console.log(constructionOptions(params)) //validate:false stats:false
+// console.log(arraydeobjetos(direction))
 
 
 
 
 
 
-// console.log(options)
-// console.log(validateExtension);
 
 
-
-
-// if(extension === '.md') {
-//     console.log('Es un archivo md')
-// var markdownLinkExtractor = require('markdown-link-extractor');
-// var markdown = fs.readFileSync('README.md').toString();
-// var links = markdownLinkExtractor(markdown);
-//     links.forEach(function (link) {
-//         console.log(link);
-//     });
-    
-// } else {
-//     console.log('No es archivo md')
-// }
-// return false
-
-
-
-
- 
 //node index.js /Users/monsesalas/Desktop/GDL004-md-links/README.md
 //node index.js /Users/monsesalas/Desktop/GDL004-md-links/README.md --validate 
