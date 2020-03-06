@@ -3,11 +3,11 @@ const path = require('path');
 module.exports.validateExtension = (direction) => {
     const extension = path.extname(direction)
     if(extension === '.md') {
-        //console.log('Es un archivo md')
+        //console.log('Puedes utilizar un --validate o --stats')
         return true;
         
     } 
-    console.log('Por favor haz un --help para mas informacion (:')
+    //console.log('No es un archivo .md (:')
     return false
 }
 

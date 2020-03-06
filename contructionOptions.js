@@ -6,15 +6,13 @@ module.exports.constructionOptions = (params) => {
     }
 
     if (params.indexOf('--validate'|| '--v') > -1) {
-    
-        console.log('Existe el validate');
+        //console.log('Existe el validate');
         options.validate = true;
         
     } 
     
     if (params.indexOf('--stats' || '--s') > -1) {
-    
-        console.log('Existe el stats');
+        //console.log('Existe el stats');
         options.stats = true;
         
     }
